@@ -1,11 +1,12 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React from 'react'
 import './App.css'
+import HomePage from './pages/HomePage'
 
 function App() {
   return(
-    <div className="text-3xl font-bold underline">this is app</div>
+    <div className='mx-20 my-10'>
+      <HomePage />
+    </div>
   )
 }
 
