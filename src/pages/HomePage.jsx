@@ -10,9 +10,9 @@ const HomePage = () => {
 
     const {handleFirstChange, handleSecondChange, first, second} = useContext(StatesContext)
 
-    //pointer is set to 'not-allowed' if any of the options is not selected
+    // If any of the options is not selected, the submit button is disabled
 
-    let pointer = first==null || second==null ? 'not-allowed' : 'pointer'
+    let buttonClass = first==null || second==null ? "bg-[#FFCC66] py-2 px-10 mt-8 text-xl font-bold rounded-md cursor-not-allowed" : "bg-[#FFCC66] py-2 px-10 mt-8 text-xl font-bold rounded-md cursor-pointer"
 
     return ( 
         <div>
@@ -49,9 +49,7 @@ const HomePage = () => {
             <div>
                 <Link to='./mode-choice'>
                     {/* Submit button is disabled if any of the options is not selected */}
-                    <button className={`bg-[#FFCC66] py-2 px-10 mt-8 text-xl font-bold rounded-md cursor-${pointer}`}
-                            disabled={first==null || second==null}
-                    >
+                    <button className={buttonClass} disabled={first==null || second==null} >
                         Submit
                     </button>
                 </Link>
