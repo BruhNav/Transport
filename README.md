@@ -73,9 +73,6 @@ The mode of travel in column 4th and 5th depends on the feedback given by the us
 
 ## Resources
 
-**create-react-app** : The following link has all the commands that can be used with create-react-app
-https://github.com/facebook/create-react-app
-
 **Vite** : Refer to https://vitejs.dev/ to understand the concepts of ViteJS
 
 **TailwindCSS** : Refer to https://tailwindcss.com/ to understand how to use Tailwind CSS
