@@ -24,7 +24,7 @@ Refer to https://nodejs.org/en/ to install nodejs
 
 ## Live Application URL
 
-The Application is deployed in https://aditya-sridhar.github.io/simple-reactjs-app
+The Application is deployed in https://transport-work-lq7geqofn-bruhnav.vercel.app/
 
 Click on the link to see the application
 
