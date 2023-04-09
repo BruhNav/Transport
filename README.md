@@ -9,13 +9,6 @@ This Project is a ReactJS (Vite) Project which demonstrates the following
 4. Using Tailwind along with React
 5. Using Basic Routing in React
 
-The project Template can be used to build bigger projects
-
-## Live Application URL
-
-### https://transport-work-lq7geqofn-bruhnav.vercel.app/
-This URL has the application deployed in
-
 ## Prerequisites
 
 ### Install Node JS
@@ -86,3 +79,5 @@ https://github.com/facebook/create-react-app
 **Vite** : Refer to https://vitejs.dev/ to understand the concepts of ViteJS
 
 **TailwindCSS** : Refer to https://tailwindcss.com/ to understand how to use Tailwind CSS
+
+**React Icons** : Refer to https://react-icons.github.io/react-icons to understand how to use React Icons
