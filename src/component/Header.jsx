@@ -24,11 +24,11 @@ const Header = () => {
         </button>
 
         <button className='ml-10'>
-          Documentation
+          <a target='_blank' href="https://drive.google.com/file/d/1-tcDFCNE0qgX7zlvBA39luqRZDpKzgPf/view?usp=sharing">Documentation</a> 
         </button>
 
         <button className='ml-10'>
-          <a href="https://github.com/BruhNav/Transport">Github</a>
+          <a target='_blank' href="https://github.com/BruhNav/Transport">Github</a>
         </button>
     </div>
   )
