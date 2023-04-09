@@ -39,6 +39,8 @@ const ModeChoice = () => {
     else if(second==5) data = twentyKm
     else if(second==6) data = twentyFiveKm
 
+    //selecting the mode of transport for the selected distance in page 1
+    //if the any other mode is selected other than the given option a random value will be allotted to mode
 
     const four = first != 9 && first !=8? 8+random : first
     const five = first != 7 && first !=5? 5+(2*random) : first
@@ -49,6 +51,7 @@ const ModeChoice = () => {
         <div className='text-xl font-semibold mb-8'>
             Choose the mode of transportation:
         </div>
+        {/* Row component for displaying the mode of transport */}
 
        <Row
             first={<label className='text-lg cursor-pointer'><input name='mode' className='mr-2' type="radio" />Bus Route 1 </label>}
@@ -61,6 +64,7 @@ const ModeChoice = () => {
         <div className="bg-black flex justify-center items-center w-100% h-max text-white py-1 border border-white">
             Total travel time spent while inside the vehicle(s)
         </div>
+        {/* Row component for displaying the travel time icons are changed according to the mode of transport*/}
 
         <Row
             first={<div className='flex flex-col items-center '>

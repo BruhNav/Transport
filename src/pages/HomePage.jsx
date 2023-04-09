@@ -10,6 +10,8 @@ const HomePage = () => {
 
     const {handleFirstChange, handleSecondChange, first, second} = useContext(StatesContext)
 
+    //pointer is set to 'not-allowed' if any of the options is not selected
+
     let pointer = first==null || second==null ? 'not-allowed' : 'pointer'
 
     return ( 
@@ -20,6 +22,8 @@ const HomePage = () => {
                 <div className='font-semibold text-xl'>
                 What is your most frequently used means of travel from your home to work location?
                 </div>
+                {/*The options gets the values corresponding to the mode in the data.json file*/}
+
                 <Options name={'first'} value={1} option={'Bus'}/>
                 <Options name={'first'} value={4} option={'Metro'}/>
                 <Options name={'first'} value={9} option={'Own Two-wheeler'}/>
@@ -44,6 +48,7 @@ const HomePage = () => {
             <br />
             <div>
                 <Link to='./mode-choice'>
+                    {/* Submit button is disabled if any of the options is not selected */}
                     <button className={`bg-[#FFCC66] py-2 px-10 mt-8 text-xl font-bold rounded-md cursor-${pointer}`}
                             disabled={first==null || second==null}
                     >
