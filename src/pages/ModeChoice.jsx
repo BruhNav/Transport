@@ -2,17 +2,22 @@ import React, { useState } from 'react'
 import { useContext } from 'react'
 import StatesContext from '../context/StatesContext'
 import Row from '../component/Row'
+
+//icons import
+
+import { MdOutlineBusAlert, MdOutlineDirectionsBusFilled, MdDirectionsWalk, MdAirlineSeatReclineNormal, MdAirlineSeatReclineExtra } from 'react-icons/md'
+import { BsFillTrainFrontFill, BsCarFrontFill, BsFillTaxiFrontFill, BsSnow } from 'react-icons/bs'
+import { RiMotorbikeFill }  from 'react-icons/ri'
+import { FaUber } from 'react-icons/fa'
+
+//data import
+
 import zeroKm from '../Data/sample_db_0km.json'
 import fiveKm from '../Data/sample_db_5km.json'
 import tenKm from '../Data/sample_db_10km.json'
 import fifteenKm from '../Data/sample_db_15km.json'
 import twentyKm from '../Data/sample_db_20km.json'
 import twentyFiveKm from '../Data/sample_db_25km.json'
-import { MdOutlineBusAlert, MdOutlineDirectionsBusFilled, MdDirectionsWalk, MdAirlineSeatReclineNormal, MdAirlineSeatReclineExtra } from 'react-icons/md'
-import { BsFillTrainFrontFill, BsCarFrontFill, BsFillTaxiFrontFill, BsSnow } from 'react-icons/bs'
-import { RiMotorbikeFill }  from 'react-icons/ri'
-import { FaUber } from 'react-icons/fa'
-
 
 
 const ModeChoice = () => {
