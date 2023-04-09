@@ -1,96 +1,59 @@
 import React from 'react'
-import Header from '../component/Header'
-import ModeChoice from './ModeChoice'
+import StatesContext from '../context/StatesContext'
+import { useContext } from 'react'
+import Options from '../component/Options'
+import { Link } from 'react-router-dom'
 
 const HomePage = () => {
 
+    //destructuring the context
 
-    const [first, setFirst] = React.useState(0)
+    const {handleFirstChange, handleSecondChange, first, second} = useContext(StatesContext)
 
-    const [second, setSecond] = React.useState(0)
+    let pointer = first==null || second==null ? 'not-allowed' : 'pointer'
 
-    const handleFirstChange = (e) => {
-        setFirst(e.target.value)
-    }
-    const handleSecondChange = (e) => {
-        setSecond(e.target.value)
-    }
+    return ( 
+        <div>
+            {/* First Question */}
 
-  return (
-    <div>
-        <Header />
-
-        {/* First Question */}
-
-        <div onChange={handleFirstChange}>
-            <div className='font-semibold text-xl'>
-            What is your most frequently used means of travel from your home to work location?
+            <div onChange={handleFirstChange}>
+                <div className='font-semibold text-xl'>
+                What is your most frequently used means of travel from your home to work location?
+                </div>
+                <Options name={'first'} value={1} option={'Bus'}/>
+                <Options name={'first'} value={4} option={'Metro'}/>
+                <Options name={'first'} value={9} option={'Own Two-wheeler'}/>
+                <Options name={'first'} value={8} option={'Own Car'}/>
+                <Options name={'first'} value={2} option={'Walk / Bicycle'}/>
+                <Options name={'first'} value={7} option={'Auto'}/>
+                <Options name={'first'} value={5} option={'App based ride hailing cab services including Ola / Uber'}/>
             </div>
-            <div className='flex mt-4'>
-                <label className='text-lg font-semibold ml-2 transition duration-500 hover:scale-110'>
-                <input className='mr-2' type="radio" name='first' value={1}/>Bus</label>
+            <br />
+            {/* Second Question */}
+            <div onChange={handleSecondChange}>
+                <div className='font-semibold text-xl mt-4'>
+                What is the total distance between your home and workplace?
+                </div>
+                <Options name={'second'} value={1} option={<span>&lt; 5 km</span>}/>
+                <Options name={'second'} value={2} option={'5- 10 km'}/>
+                <Options name={'second'} value={3} option={'10- 15 km'}/>
+                <Options name={'second'} value={4} option={'15- 20 km'}/>
+                <Options name={'second'} value={5} option={'20- 25 km'}/>
+                <Options name={'second'} value={6} option={<span>&gt; 25 km</span>}/>
             </div>
-            <div className='flex mt-4'>
-                <label className='text-lg font-semibold ml-2 transition duration-500 hover:scale-110'>
-                <input className='mr-2' type="radio" name='first' value={2}/>Metro</label>
-            </div>
-            <div className='flex mt-4'>
-                <label className='text-lg font-semibold ml-2 transition duration-500 hover:scale-110'>
-                <input className='mr-2' type="radio" name='first' value={3}/>Own Two-wheeler</label>
-            </div>
-            <div className='flex mt-4'>
-                <label className='text-lg font-semibold ml-2 transition duration-500 hover:scale-110'>
-                <input className='mr-2' type="radio" name='first' value={4}/>Own Car</label>
-            </div>
-            <div className='flex mt-4'>
-                <label className='text-lg font-semibold ml-2 transition duration-500 hover:scale-110'>
-                <input className='mr-2' type="radio" name='first' value={5}/>Walk / Bicycle</label>
-            </div>
-            <div className='flex mt-4'>
-                <label className='text-lg font-semibold ml-2 transition duration-500 hover:scale-110'>
-                <input className='mr-2' type="radio" name='first' value={6}/>Auto</label>
-            </div>
-            <div className='flex mt-4'>
-                <label className='text-lg font-semibold ml-2 transition duration-500 hover:scale-105'>
-                <input className='mr-2' type="radio" name='first' value={7}/>App based ride hailing cab services including Ola / Uber</label>
+            <br />
+            <div>
+                <Link to='./mode-choice'>
+                    <button className={`bg-[#FFCC66] py-2 px-10 mt-8 text-xl font-bold rounded-md cursor-${pointer}`}
+                            disabled={first==null || second==null}
+                    >
+                        Submit
+                    </button>
+                </Link>
             </div>
         </div>
-        <br />
-        {/* Second Question */}
-        <div onChange={handleSecondChange}>
-            <div className='font-semibold text-xl mt-4'>
-            What is the total distance between your home and workplace?
-            </div>
-            <div className='flex mt-4'>
-                <label className='text-lg font-semibold ml-2 transition duration-500 hover:scale-110'>
-                <input className='mr-2' type="radio" name='first' value={1}/>&lt; 5 km</label>
-            </div>
-            <div className='flex mt-4'>
-                <label className='text-lg font-semibold ml-2 transition duration-500 hover:scale-110'>
-                <input className='mr-2' type="radio" name='first' value={2}/>5 - 10 km</label>
-            </div>
-            <div className='flex mt-4'>
-                <label className='text-lg font-semibold ml-2 transition duration-500 hover:scale-110'>
-                <input className='mr-2' type="radio" name='first' value={3}/>10- 15 km</label>
-            </div>
-            <div className='flex mt-4'>
-                <label className='text-lg font-semibold ml-2 transition duration-500 hover:scale-110'>
-                <input className='mr-2' type="radio" name='first' value={4}/>15- 20 km</label>
-            </div>
-            <div className='flex mt-4'>
-                <label className='text-lg font-semibold ml-2 transition duration-500 hover:scale-110'>
-                <input className='mr-2' type="radio" name='first' value={5}/>20- 25 km</label>
-            </div>
-            <div className='flex mt-4'>
-                <label className='text-lg font-semibold ml-2 transition duration-500 hover:scale-110'>
-                <input className='mr-2' type="radio" name='first' value={6}/>&gt; 25 km</label>
-            </div>
-        </div>
-    </div>
-  )
-}
+    )
+    }
 
 export default HomePage
 
-
-// transition duration-500 hover:scale-110
